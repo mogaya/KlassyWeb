@@ -1,9 +1,43 @@
-var loginbtn = document.querySelector(".login");
-loginbtn.addEventListener("click", function (e) { window.location.href = "./products.php";});
-
-// Start Slide Show JS
 let slideIndex = 0;
 showSlides();
+
+//Start Increament Js
+const counters = document.querySelectorAll('.counter')
+const count = document.getElementById('count')
+
+count.addEventListener("mouseenter", (e) => {
+  counters.forEach(counter => {
+    counter.innerText = '0'
+
+    const updateCounter = () => {
+        const target = +counter.getAttribute('data-target')
+        const c = +counter.innerText
+
+        const increment = target /200
+
+        if(c < target) {
+            counter.innerText = `${Math.ceil(c + increment)}`
+            setTimeout(updateCounter, 1)
+        } else {
+            counter.innerText = target
+        }
+    }
+
+    updateCounter()
+  })
+})
+
+
+//End Increament Js
+
+var loginbtn = document.querySelector(".login");
+var signUpbtn = document.querySelector(".signUp");
+loginbtn.addEventListener("click", function (e) { window.location.href = "./login.php";});
+signUpbtn.addEventListener("click", function (e) { window.location.href = "./signup.php";});
+
+
+// Start Slide Show JS
+
 
 function showSlides() {
   let i;
@@ -43,34 +77,6 @@ nextButton.addEventListener("click", () => {
 });
 //End Product Carousel Js
 
-//Start Increament Js
-const counters = document.querySelectorAll('.counter')
-const count = document.getElementById('count')
-
-count.addEventListener("mouseenter", (e) => {
-  counters.forEach(counter => {
-    counter.innerText = '0'
-
-    const updateCounter = () => {
-        const target = +counter.getAttribute('data-target')
-        const c = +counter.innerText
-
-        const increment = target /200
-
-        if(c < target) {
-            counter.innerText = `${Math.ceil(c + increment)}`
-            setTimeout(updateCounter, 1)
-        } else {
-            counter.innerText = target
-        }
-    }
-
-    updateCounter()
-  })
-})
-
-
-//End Increament Js
 
 //Start Product Carousel Js
 const carouselWrapperTwo = document.querySelector(".carousel-wrapper-Two");

@@ -710,6 +710,7 @@ h2 {
 }
 
 .btn-landing {
+   /* visibility: hidden; */
   border: none;
   background: none;
   color: #fff;
@@ -718,7 +719,7 @@ h2 {
   font-family: "Roboto", "Helvetica", "Sans-serif";
 }
 
-.signUp:hover, .login:hover {
+.signUp:hover, .login:hover, .logOut:hover, .shop:hover {
   color: var(--pumpkin);
 }
 
@@ -1259,3 +1260,7 @@ footer .footer-followUs ul {
   display: block;
   text-align: center;
 }
+
+ /* Start Login And SignUp Styles */
+ 
+  /* End Login And SignUp Styles */

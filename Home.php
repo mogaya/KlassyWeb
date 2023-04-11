@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Klassy | Welcome</title>
+<?php
+session_start();
 
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOME</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="/css/style.css">
 
@@ -14,19 +17,24 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
     <script src="landing.js" defer></script>
 </head>
-
 <body>
+    <!-- <h1>
+        Hello, <?php echo $_SESSION['name']; ?>
+    </h1>
+    <a href="logout.php">Logout</a> -->
 
     <section id="navigation">
         <nav class="nav-bar">
             <div class="klassy-logo">
                 <img src="/Images/klassyLogo.png" alt="">
             </div>
-            <div class="welcome">Karibu Klassy</div>
+            <div class="welcome"><?php echo $_SESSION['name']; ?> Karibu Klassy</div>
             <div class="nav-btn">
-                <button class="login btn-landing">Login</button>
+                <a href="products.php"><button class="shop btn-landing">Let's Shop</button></a>
+                <!-- <button class="shop btn-landing">Let's Shop</button> -->
                 <div class="btn-landing">|</div>
-                <button class="signUp btn-landing">Sign Up</button>
+                <a href="logout.php"><button class="logOut btn-landing">Log Out</button></a>
+                <!-- <button class="logOut btn-landing">Log Out</button> -->
             </div>
         </nav>
     </section>
@@ -323,7 +331,12 @@
 
         </footer>
 
-        
 </body>
-
 </html>
+
+<?php
+}else{
+     header("Location: index.php");
+     exit();
+}
+?>

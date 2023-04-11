@@ -7,8 +7,7 @@
             </div></a>
 
       <nav class="navbar">
-         <!-- <a href="admin.php">add products</a> -->
-         <a href="home.php">Home</a>
+         <a href="admin.php">add products</a>
          <a href="products.php">view products</a>
       </nav>
 
@@ -19,7 +18,7 @@
 
       ?>
 
-      <a href="cart.php" class="cart">cart <span><?php echo $row_count; ?></span> </a>
+      <!-- <a href="cart.php" class="cart">cart <span><?php echo $row_count; ?></span> </a> -->
 
       <div id="menu-btn" class="fas fa-bars"></div>
 
